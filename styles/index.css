@@ -1,0 +1,471 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
+
+body{
+  background-color: #000;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5% 0;
+  margin: 20px;
+}
+
+header ul {
+  display: flex;
+  gap: 25px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 25px;
+  cursor: pointer;
+}
+
+#home {
+  position: relative; 
+  background-image: url('/images/home-background.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 140vh;
+  color: #fff;
+  overflow: hidden;
+}
+
+
+.home-img {
+  position: relative;     
+  display: block;
+  margin: 0 auto;        
+  max-height: 140vh;
+}
+
+
+.home-text {
+  position: absolute;
+  top: 75%;                
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;            
+  width: 80%;
+  max-width: 600px;
+}
+
+.home-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.home-text p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 595px;
+  margin-left: 40px;
+}
+
+.home-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-btns button {
+    cursor: pointer;
+}
+
+.shop {
+  color: #000;
+  background-color: #fff;
+  padding: 13px;
+  border-radius: 12px;
+  outline: none;
+}
+
+.collections {
+  color: #fff;
+  background-color: #000;
+  padding: 13px;
+  border-radius: 12px;
+  outline: none;
+  border: 0.8px solid #fff;
+}
+
+#home::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40vh;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 40%,
+    #000 100%
+  );
+  pointer-events: none;
+  z-index: 0; 
+}
+
+
+#brands {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  height: 40vh;
+  background: linear-gradient(23.16deg, rgba(0, 0, 0, 0) 5.35%, #000000 34.39%);
+
+}
+
+#brands p {
+  color: #8B8B8B;
+}
+
+#brands div {
+  display: flex;
+  gap: 50px;
+  margin: 20px;
+}
+
+#brands div img {
+  width: 50px;
+}
+
+#store {
+  background-image: url("/images/moon.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+#store div {
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#store p {
+  text-align: center;
+}
+
+
+
+#collection {
+  display: flex;
+  gap: 60px;
+  padding: 60px 5%;
+  background: black;
+  color: white;
+}
+
+.collection-left h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.collection-left ul {
+  list-style: none;
+}
+
+.collection-left li {
+  margin: 10px 0;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.collection-left .active {
+  color: red;
+}
+
+.collection-right {
+  flex: 1;
+}
+
+
+.slider-arrows {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.slider-arrows button {
+  background: transparent;
+  border: 1px solid #444;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+
+.product-card img {
+  width: 200px;
+  border-radius: 12px;
+}
+
+.product-card h3 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.product-card p {
+  color: #ccc;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dots {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background: gray;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: red;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 3%;
+    margin: 10px;
+  }
+
+  header ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  .nav-icons {
+    gap: 15px;
+  }
+
+  #home {
+    height: 100vh;
+  }
+
+  .home-text {
+    top: 70%;
+    width: 90%;
+  }
+
+  .home-text h1 {
+    font-size: 2rem;
+  }
+
+  .home-text p {
+    font-size: 0.9rem;
+    margin-left: 0;
+  }
+
+  .home-btns {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .home-btns button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  #brands {
+    height: auto;
+    padding: 30px 10px;
+  }
+
+  #brands div {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  #brands div img {
+    width: 40px;
+  }
+
+  #store {
+    height: 50vh;
+    padding: 20px;
+  }
+
+  #store div {
+    max-width: 90%;
+  }
+
+  #store h1 {
+    font-size: 1.5rem;
+  }
+
+  #store p {
+    font-size: 0.9rem;
+  }
+
+  #collection {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 3%;
+  }
+
+  .collection-left {
+    width: 100%;
+  }
+
+  .collection-left h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .collection-left ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .collection-left li {
+    margin: 5px;
+    padding: 5px 10px;
+    background: #111;
+    border-radius: 8px;
+  }
+
+  .collection-right {
+    width: 100%;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card img {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .product-card h3 {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .product-card p {
+    font-size: 12px;
+  }
+
+  .product-card button {
+    padding: 6px 10px;
+    font-size: 12px;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .slider-arrows {
+    justify-content: center;
+  }
+
+  .dots {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .home-text p {
+    font-size: 0.8rem;
+  }
+
+  #brands div img {
+    width: 30px;
+  }
+
+  .collection-left h1 {
+    font-size: 22px;
+  }
+
+  .collection-left li {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product-card img {
+    max-width: 250px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+  }
+
+  .product-card p {
+    font-size: 14px;
+  }
+
+  .product-card button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
