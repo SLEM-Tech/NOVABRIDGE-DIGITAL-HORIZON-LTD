@@ -1,12 +1,12 @@
 -- ============================================================
--- BRIDGELINE VERTEX INNOVATIONS LTD Seed Data — Digital Goods (Gadgets, Phones, Accessories)
+-- NOVABRIDGE DIGITAL HORIZON LTD Seed Data — Digital Goods (Gadgets, Phones, Accessories)
 -- Run via: GET /api/db/seed?secret=seed-db-2024
 -- ============================================================
 
 -- ── Categories ───────────────────────────────────────────────
 
 -- Parent categories
-INSERT INTO bridgeline_categories (name, slug, description, parent_id, image_url, count) VALUES
+INSERT INTO novabridge_categories (name, slug, description, parent_id, image_url, count) VALUES
   ('Smartphones & Tablets',   'smartphones-tablets',   'Latest smartphones and tablets from top brands',              NULL, 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400', 0),
   ('Laptops & Computers',     'laptops-computers',     'Powerful laptops, desktops and computer accessories',         NULL, 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400', 0),
   ('Audio & Headphones',      'audio-headphones',      'Premium earbuds, headphones and portable speakers',           NULL, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400', 0),
@@ -18,55 +18,55 @@ INSERT INTO bridgeline_categories (name, slug, description, parent_id, image_url
 ON CONFLICT (slug) DO NOTHING;
 
 -- Sub-categories (parent_id resolved by slug lookup)
-INSERT INTO bridgeline_categories (name, slug, description, parent_id, image_url, count)
+INSERT INTO novabridge_categories (name, slug, description, parent_id, image_url, count)
 SELECT 'Android Phones', 'android-phones', 'Samsung, Tecno, Infinix and more', id, 'https://images.unsplash.com/photo-1570101945621-945409a6370f?w=400', 0
-FROM bridgeline_categories WHERE slug = 'smartphones-tablets'
+FROM novabridge_categories WHERE slug = 'smartphones-tablets'
 ON CONFLICT (slug) DO NOTHING;
 
-INSERT INTO bridgeline_categories (name, slug, description, parent_id, image_url, count)
+INSERT INTO novabridge_categories (name, slug, description, parent_id, image_url, count)
 SELECT 'iPhones & iPads', 'iphones-ipads', 'Apple iPhone and iPad lineup', id, 'https://images.unsplash.com/photo-1580910051074-3eb694886505?w=400', 0
-FROM bridgeline_categories WHERE slug = 'smartphones-tablets'
+FROM novabridge_categories WHERE slug = 'smartphones-tablets'
 ON CONFLICT (slug) DO NOTHING;
 
-INSERT INTO bridgeline_categories (name, slug, description, parent_id, image_url, count)
+INSERT INTO novabridge_categories (name, slug, description, parent_id, image_url, count)
 SELECT 'Laptops', 'laptops', 'MacBook, Dell, HP, Lenovo and more', id, 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400', 0
-FROM bridgeline_categories WHERE slug = 'laptops-computers'
+FROM novabridge_categories WHERE slug = 'laptops-computers'
 ON CONFLICT (slug) DO NOTHING;
 
-INSERT INTO bridgeline_categories (name, slug, description, parent_id, image_url, count)
+INSERT INTO novabridge_categories (name, slug, description, parent_id, image_url, count)
 SELECT 'Earbuds & Earphones', 'earbuds', 'True wireless and wired earbuds', id, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400', 0
-FROM bridgeline_categories WHERE slug = 'audio-headphones'
+FROM novabridge_categories WHERE slug = 'audio-headphones'
 ON CONFLICT (slug) DO NOTHING;
 
-INSERT INTO bridgeline_categories (name, slug, description, parent_id, image_url, count)
+INSERT INTO novabridge_categories (name, slug, description, parent_id, image_url, count)
 SELECT 'Over-Ear Headphones', 'headphones', 'Premium over-ear and on-ear headphones', id, 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400', 0
-FROM bridgeline_categories WHERE slug = 'audio-headphones'
+FROM novabridge_categories WHERE slug = 'audio-headphones'
 ON CONFLICT (slug) DO NOTHING;
 
-INSERT INTO bridgeline_categories (name, slug, description, parent_id, image_url, count)
+INSERT INTO novabridge_categories (name, slug, description, parent_id, image_url, count)
 SELECT 'Portable Speakers', 'portable-speakers', 'Bluetooth and wireless portable speakers', id, 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400', 0
-FROM bridgeline_categories WHERE slug = 'audio-headphones'
+FROM novabridge_categories WHERE slug = 'audio-headphones'
 ON CONFLICT (slug) DO NOTHING;
 
-INSERT INTO bridgeline_categories (name, slug, description, parent_id, image_url, count)
+INSERT INTO novabridge_categories (name, slug, description, parent_id, image_url, count)
 SELECT 'Cases & Covers', 'cases-covers', 'Protective cases for phones and tablets', id, 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400', 0
-FROM bridgeline_categories WHERE slug = 'phone-accessories'
+FROM novabridge_categories WHERE slug = 'phone-accessories'
 ON CONFLICT (slug) DO NOTHING;
 
-INSERT INTO bridgeline_categories (name, slug, description, parent_id, image_url, count)
+INSERT INTO novabridge_categories (name, slug, description, parent_id, image_url, count)
 SELECT 'Chargers & Cables', 'chargers-cables', 'Fast chargers, USB cables and adapters', id, 'https://images.unsplash.com/photo-1623126908029-58cb08a2b272?w=400', 0
-FROM bridgeline_categories WHERE slug = 'phone-accessories'
+FROM novabridge_categories WHERE slug = 'phone-accessories'
 ON CONFLICT (slug) DO NOTHING;
 
-INSERT INTO bridgeline_categories (name, slug, description, parent_id, image_url, count)
+INSERT INTO novabridge_categories (name, slug, description, parent_id, image_url, count)
 SELECT 'Power Banks', 'power-banks', 'Portable power banks and charging stations', id, 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400', 0
-FROM bridgeline_categories WHERE slug = 'phone-accessories'
+FROM novabridge_categories WHERE slug = 'phone-accessories'
 ON CONFLICT (slug) DO NOTHING;
 
 -- ── Products ─────────────────────────────────────────────────
 
 -- 1. Samsung Galaxy S24 Ultra
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Samsung Galaxy S24 Ultra',
   'samsung-galaxy-s24-ultra',
@@ -77,7 +77,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 2. iPhone 15 Pro Max
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Apple iPhone 15 Pro Max',
   'apple-iphone-15-pro-max',
@@ -88,7 +88,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 3. Samsung Galaxy A55 5G
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Samsung Galaxy A55 5G',
   'samsung-galaxy-a55-5g',
@@ -99,7 +99,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 4. Tecno Phantom X2 Pro
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Tecno Phantom X2 Pro',
   'tecno-phantom-x2-pro',
@@ -110,7 +110,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 5. Apple iPad Pro 12.9" M2
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Apple iPad Pro 12.9" M2',
   'apple-ipad-pro-12-m2',
@@ -121,7 +121,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 6. MacBook Pro 14" M3 Pro
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Apple MacBook Pro 14" M3 Pro',
   'apple-macbook-pro-14-m3-pro',
@@ -132,7 +132,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 7. Dell XPS 15 (2024)
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Dell XPS 15 (Intel Core i7, 2024)',
   'dell-xps-15-2024',
@@ -143,7 +143,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 8. HP Pavilion 15 Laptop
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'HP Pavilion 15 Laptop (Ryzen 5)',
   'hp-pavilion-15-ryzen5',
@@ -154,7 +154,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 9. Apple AirPods Pro 2nd Generation
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Apple AirPods Pro (2nd Gen)',
   'apple-airpods-pro-2nd-gen',
@@ -165,7 +165,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 10. Samsung Galaxy Buds2 Pro
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Samsung Galaxy Buds2 Pro',
   'samsung-galaxy-buds2-pro',
@@ -176,7 +176,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 11. Sony WH-1000XM5 Headphones
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Sony WH-1000XM5 Wireless Headphones',
   'sony-wh-1000xm5',
@@ -187,7 +187,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 12. JBL Charge 5 Bluetooth Speaker
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'JBL Charge 5 Portable Speaker',
   'jbl-charge-5',
@@ -198,7 +198,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 13. Apple Watch Series 9 (GPS)
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Apple Watch Series 9 GPS 45mm',
   'apple-watch-series-9-gps-45mm',
@@ -209,7 +209,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 14. Samsung Galaxy Watch 6 Classic
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Samsung Galaxy Watch 6 Classic 47mm',
   'samsung-galaxy-watch-6-classic-47mm',
@@ -220,7 +220,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 15. Anker 67W GaN USB-C Charger
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Anker 67W GaN USB-C Wall Charger',
   'anker-67w-gan-usb-c-charger',
@@ -231,7 +231,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 16. Baseus 20000mAh Power Bank (65W)
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Baseus 20000mAh 65W Power Bank',
   'baseus-20000mah-65w-power-bank',
@@ -242,7 +242,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 17. Spigen Tough Armor iPhone 15 Pro Case
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Spigen Tough Armor iPhone 15 Pro Case',
   'spigen-tough-armor-iphone-15-pro',
@@ -253,7 +253,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 18. Logitech MX Master 3S Mouse
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Logitech MX Master 3S Wireless Mouse',
   'logitech-mx-master-3s',
@@ -264,7 +264,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 19. Sony ZV-E10 Mirrorless Camera
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Sony ZV-E10 Mirrorless Camera (Body)',
   'sony-zv-e10-mirrorless-body',
@@ -275,7 +275,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 20. GoPro Hero 12 Black
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'GoPro HERO12 Black Action Camera',
   'gopro-hero12-black',
@@ -286,7 +286,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 21. PlayStation 5 Console (Disc Edition)
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Sony PlayStation 5 Console (Disc Edition)',
   'sony-playstation-5-disc',
@@ -297,7 +297,7 @@ VALUES (
 ) ON CONFLICT (slug) DO NOTHING;
 
 -- 22. Infinix Hot 40 Pro
-INSERT INTO bridgeline_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
+INSERT INTO novabridge_products (name, slug, sku, description, short_description, price, regular_price, sale_price, stock_status, stock_quantity, rating_count, average_rating, status)
 VALUES (
   'Infinix Hot 40 Pro',
   'infinix-hot-40-pro',
@@ -309,266 +309,266 @@ VALUES (
 
 -- ── Product Images ────────────────────────────────────────────
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1709393217025-d5f34ff63b4f?w=600', 'Galaxy S24 Ultra Front', 'Samsung Galaxy S24 Ultra', 0
-FROM bridgeline_products p WHERE p.slug = 'samsung-galaxy-s24-ultra' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'samsung-galaxy-s24-ultra' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1695048133142-1a20484429be?w=600', 'iPhone 15 Pro Max', 'Apple iPhone 15 Pro Max', 0
-FROM bridgeline_products p WHERE p.slug = 'apple-iphone-15-pro-max' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'apple-iphone-15-pro-max' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1610945264803-c22b62831e5c?w=600', 'Galaxy A55', 'Samsung Galaxy A55 5G', 0
-FROM bridgeline_products p WHERE p.slug = 'samsung-galaxy-a55-5g' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'samsung-galaxy-a55-5g' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600', 'Tecno Phantom X2 Pro', 'Tecno Phantom X2 Pro', 0
-FROM bridgeline_products p WHERE p.slug = 'tecno-phantom-x2-pro' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'tecno-phantom-x2-pro' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600', 'iPad Pro 12.9', 'Apple iPad Pro 12.9 M2', 0
-FROM bridgeline_products p WHERE p.slug = 'apple-ipad-pro-12-m2' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'apple-ipad-pro-12-m2' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600', 'MacBook Pro 14 M3 Pro', 'Apple MacBook Pro 14 M3 Pro', 0
-FROM bridgeline_products p WHERE p.slug = 'apple-macbook-pro-14-m3-pro' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'apple-macbook-pro-14-m3-pro' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600', 'Dell XPS 15', 'Dell XPS 15 2024', 0
-FROM bridgeline_products p WHERE p.slug = 'dell-xps-15-2024' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'dell-xps-15-2024' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600', 'HP Pavilion 15', 'HP Pavilion 15 Laptop', 0
-FROM bridgeline_products p WHERE p.slug = 'hp-pavilion-15-ryzen5' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'hp-pavilion-15-ryzen5' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=600', 'AirPods Pro 2', 'Apple AirPods Pro 2nd Gen', 0
-FROM bridgeline_products p WHERE p.slug = 'apple-airpods-pro-2nd-gen' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'apple-airpods-pro-2nd-gen' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600', 'Galaxy Buds2 Pro', 'Samsung Galaxy Buds2 Pro', 0
-FROM bridgeline_products p WHERE p.slug = 'samsung-galaxy-buds2-pro' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'samsung-galaxy-buds2-pro' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600', 'Sony WH-1000XM5', 'Sony WH-1000XM5 Headphones', 0
-FROM bridgeline_products p WHERE p.slug = 'sony-wh-1000xm5' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'sony-wh-1000xm5' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600', 'JBL Charge 5', 'JBL Charge 5 Bluetooth Speaker', 0
-FROM bridgeline_products p WHERE p.slug = 'jbl-charge-5' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'jbl-charge-5' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1551816230-ef5deaed4a26?w=600', 'Apple Watch Series 9', 'Apple Watch Series 9', 0
-FROM bridgeline_products p WHERE p.slug = 'apple-watch-series-9-gps-45mm' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'apple-watch-series-9-gps-45mm' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600', 'Galaxy Watch 6 Classic', 'Samsung Galaxy Watch 6 Classic', 0
-FROM bridgeline_products p WHERE p.slug = 'samsung-galaxy-watch-6-classic-47mm' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'samsung-galaxy-watch-6-classic-47mm' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1626143508000-4b5a33b4f95d?w=600', 'Anker 67W GaN Charger', 'Anker 67W GaN USB-C Charger', 0
-FROM bridgeline_products p WHERE p.slug = 'anker-67w-gan-usb-c-charger' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'anker-67w-gan-usb-c-charger' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600', 'Baseus Power Bank', 'Baseus 20000mAh 65W Power Bank', 0
-FROM bridgeline_products p WHERE p.slug = 'baseus-20000mah-65w-power-bank' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'baseus-20000mah-65w-power-bank' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600', 'Spigen Case', 'Spigen Tough Armor iPhone 15 Pro Case', 0
-FROM bridgeline_products p WHERE p.slug = 'spigen-tough-armor-iphone-15-pro' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'spigen-tough-armor-iphone-15-pro' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600', 'Logitech MX Master 3S', 'Logitech MX Master 3S Mouse', 0
-FROM bridgeline_products p WHERE p.slug = 'logitech-mx-master-3s' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'logitech-mx-master-3s' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600', 'Sony ZV-E10', 'Sony ZV-E10 Mirrorless Camera', 0
-FROM bridgeline_products p WHERE p.slug = 'sony-zv-e10-mirrorless-body' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'sony-zv-e10-mirrorless-body' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600', 'GoPro Hero 12', 'GoPro HERO12 Black', 0
-FROM bridgeline_products p WHERE p.slug = 'gopro-hero12-black' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'gopro-hero12-black' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=600', 'PlayStation 5', 'Sony PlayStation 5 Console', 0
-FROM bridgeline_products p WHERE p.slug = 'sony-playstation-5-disc' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'sony-playstation-5-disc' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_images (product_id, src, name, alt, position)
+INSERT INTO novabridge_product_images (product_id, src, name, alt, position)
 SELECT p.id, 'https://images.unsplash.com/photo-1610945264803-c22b62831e5c?w=600', 'Infinix Hot 40 Pro', 'Infinix Hot 40 Pro', 0
-FROM bridgeline_products p WHERE p.slug = 'infinix-hot-40-pro' ON CONFLICT DO NOTHING;
+FROM novabridge_products p WHERE p.slug = 'infinix-hot-40-pro' ON CONFLICT DO NOTHING;
 
 -- ── Product ↔ Category Links ──────────────────────────────────
 
 -- Samsung Galaxy S24 Ultra → smartphones-tablets, android-phones
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'samsung-galaxy-s24-ultra' AND c.slug IN ('smartphones-tablets','android-phones')
 ON CONFLICT DO NOTHING;
 
 -- iPhone 15 Pro Max → smartphones-tablets, iphones-ipads
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'apple-iphone-15-pro-max' AND c.slug IN ('smartphones-tablets','iphones-ipads')
 ON CONFLICT DO NOTHING;
 
 -- Galaxy A55 → smartphones-tablets, android-phones
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'samsung-galaxy-a55-5g' AND c.slug IN ('smartphones-tablets','android-phones')
 ON CONFLICT DO NOTHING;
 
 -- Tecno Phantom X2 Pro → smartphones-tablets, android-phones
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'tecno-phantom-x2-pro' AND c.slug IN ('smartphones-tablets','android-phones')
 ON CONFLICT DO NOTHING;
 
 -- iPad Pro → smartphones-tablets, iphones-ipads
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'apple-ipad-pro-12-m2' AND c.slug IN ('smartphones-tablets','iphones-ipads')
 ON CONFLICT DO NOTHING;
 
 -- MacBook Pro → laptops-computers, laptops
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'apple-macbook-pro-14-m3-pro' AND c.slug IN ('laptops-computers','laptops')
 ON CONFLICT DO NOTHING;
 
 -- Dell XPS 15 → laptops-computers, laptops
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'dell-xps-15-2024' AND c.slug IN ('laptops-computers','laptops')
 ON CONFLICT DO NOTHING;
 
 -- HP Pavilion → laptops-computers, laptops
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'hp-pavilion-15-ryzen5' AND c.slug IN ('laptops-computers','laptops')
 ON CONFLICT DO NOTHING;
 
 -- AirPods Pro → audio-headphones, earbuds
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'apple-airpods-pro-2nd-gen' AND c.slug IN ('audio-headphones','earbuds')
 ON CONFLICT DO NOTHING;
 
 -- Galaxy Buds2 Pro → audio-headphones, earbuds
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'samsung-galaxy-buds2-pro' AND c.slug IN ('audio-headphones','earbuds')
 ON CONFLICT DO NOTHING;
 
 -- Sony WH-1000XM5 → audio-headphones, headphones
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'sony-wh-1000xm5' AND c.slug IN ('audio-headphones','headphones')
 ON CONFLICT DO NOTHING;
 
 -- JBL Charge 5 → audio-headphones, portable-speakers
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'jbl-charge-5' AND c.slug IN ('audio-headphones','portable-speakers')
 ON CONFLICT DO NOTHING;
 
 -- Apple Watch → smartwatches-wearables
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'apple-watch-series-9-gps-45mm' AND c.slug = 'smartwatches-wearables'
 ON CONFLICT DO NOTHING;
 
 -- Galaxy Watch 6 → smartwatches-wearables
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'samsung-galaxy-watch-6-classic-47mm' AND c.slug = 'smartwatches-wearables'
 ON CONFLICT DO NOTHING;
 
 -- Anker Charger → phone-accessories, chargers-cables
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'anker-67w-gan-usb-c-charger' AND c.slug IN ('phone-accessories','chargers-cables')
 ON CONFLICT DO NOTHING;
 
 -- Baseus Power Bank → phone-accessories, power-banks
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'baseus-20000mah-65w-power-bank' AND c.slug IN ('phone-accessories','power-banks')
 ON CONFLICT DO NOTHING;
 
 -- Spigen Case → phone-accessories, cases-covers
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'spigen-tough-armor-iphone-15-pro' AND c.slug IN ('phone-accessories','cases-covers')
 ON CONFLICT DO NOTHING;
 
 -- Logitech Mouse → computer-accessories
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'logitech-mx-master-3s' AND c.slug = 'computer-accessories'
 ON CONFLICT DO NOTHING;
 
 -- Sony ZV-E10 → cameras-photography
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'sony-zv-e10-mirrorless-body' AND c.slug = 'cameras-photography'
 ON CONFLICT DO NOTHING;
 
 -- GoPro Hero 12 → cameras-photography
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'gopro-hero12-black' AND c.slug = 'cameras-photography'
 ON CONFLICT DO NOTHING;
 
 -- PS5 → gaming
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'sony-playstation-5-disc' AND c.slug = 'gaming'
 ON CONFLICT DO NOTHING;
 
 -- Infinix Hot 40 Pro → smartphones-tablets, android-phones
-INSERT INTO bridgeline_product_categories (product_id, category_id)
-SELECT p.id, c.id FROM bridgeline_products p, bridgeline_categories c
+INSERT INTO novabridge_product_categories (product_id, category_id)
+SELECT p.id, c.id FROM novabridge_products p, novabridge_categories c
 WHERE p.slug = 'infinix-hot-40-pro' AND c.slug IN ('smartphones-tablets','android-phones')
 ON CONFLICT DO NOTHING;
 
 -- ── Product Attributes ────────────────────────────────────────
 
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Storage', ARRAY['256GB', '512GB', '1TB'], 0 FROM bridgeline_products WHERE slug = 'samsung-galaxy-s24-ultra' ON CONFLICT DO NOTHING;
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Color', ARRAY['Titanium Black', 'Titanium Gray', 'Titanium Violet', 'Titanium Yellow'], 1 FROM bridgeline_products WHERE slug = 'samsung-galaxy-s24-ultra' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Storage', ARRAY['256GB', '512GB', '1TB'], 0 FROM novabridge_products WHERE slug = 'samsung-galaxy-s24-ultra' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Color', ARRAY['Titanium Black', 'Titanium Gray', 'Titanium Violet', 'Titanium Yellow'], 1 FROM novabridge_products WHERE slug = 'samsung-galaxy-s24-ultra' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Storage', ARRAY['256GB', '512GB', '1TB'], 0 FROM bridgeline_products WHERE slug = 'apple-iphone-15-pro-max' ON CONFLICT DO NOTHING;
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Color', ARRAY['Natural Titanium', 'Blue Titanium', 'White Titanium', 'Black Titanium'], 1 FROM bridgeline_products WHERE slug = 'apple-iphone-15-pro-max' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Storage', ARRAY['256GB', '512GB', '1TB'], 0 FROM novabridge_products WHERE slug = 'apple-iphone-15-pro-max' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Color', ARRAY['Natural Titanium', 'Blue Titanium', 'White Titanium', 'Black Titanium'], 1 FROM novabridge_products WHERE slug = 'apple-iphone-15-pro-max' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Storage', ARRAY['128GB', '256GB'], 0 FROM bridgeline_products WHERE slug = 'samsung-galaxy-a55-5g' ON CONFLICT DO NOTHING;
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Color', ARRAY['Awesome Iceblue', 'Awesome Navy', 'Awesome Lilac'], 1 FROM bridgeline_products WHERE slug = 'samsung-galaxy-a55-5g' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Storage', ARRAY['128GB', '256GB'], 0 FROM novabridge_products WHERE slug = 'samsung-galaxy-a55-5g' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Color', ARRAY['Awesome Iceblue', 'Awesome Navy', 'Awesome Lilac'], 1 FROM novabridge_products WHERE slug = 'samsung-galaxy-a55-5g' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'RAM', ARRAY['16GB', '18GB'], 0 FROM bridgeline_products WHERE slug = 'apple-macbook-pro-14-m3-pro' ON CONFLICT DO NOTHING;
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Storage', ARRAY['512GB SSD', '1TB SSD', '2TB SSD'], 1 FROM bridgeline_products WHERE slug = 'apple-macbook-pro-14-m3-pro' ON CONFLICT DO NOTHING;
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Color', ARRAY['Space Black', 'Silver'], 2 FROM bridgeline_products WHERE slug = 'apple-macbook-pro-14-m3-pro' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'RAM', ARRAY['16GB', '18GB'], 0 FROM novabridge_products WHERE slug = 'apple-macbook-pro-14-m3-pro' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Storage', ARRAY['512GB SSD', '1TB SSD', '2TB SSD'], 1 FROM novabridge_products WHERE slug = 'apple-macbook-pro-14-m3-pro' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Color', ARRAY['Space Black', 'Silver'], 2 FROM novabridge_products WHERE slug = 'apple-macbook-pro-14-m3-pro' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Color', ARRAY['Midnight', 'Starlight', 'Pink', 'Storm Blue', 'Green'], 0 FROM bridgeline_products WHERE slug = 'apple-watch-series-9-gps-45mm' ON CONFLICT DO NOTHING;
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Size', ARRAY['41mm', '45mm'], 1 FROM bridgeline_products WHERE slug = 'apple-watch-series-9-gps-45mm' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Color', ARRAY['Midnight', 'Starlight', 'Pink', 'Storm Blue', 'Green'], 0 FROM novabridge_products WHERE slug = 'apple-watch-series-9-gps-45mm' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Size', ARRAY['41mm', '45mm'], 1 FROM novabridge_products WHERE slug = 'apple-watch-series-9-gps-45mm' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Color', ARRAY['Phantom Black', 'Cream', 'Graphite'], 0 FROM bridgeline_products WHERE slug = 'samsung-galaxy-buds2-pro' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Color', ARRAY['Phantom Black', 'Cream', 'Graphite'], 0 FROM novabridge_products WHERE slug = 'samsung-galaxy-buds2-pro' ON CONFLICT DO NOTHING;
 
-INSERT INTO bridgeline_product_attributes (product_id, name, options, position)
-SELECT id, 'Color', ARRAY['Black', 'Blue', 'Red', 'Gray'], 0 FROM bridgeline_products WHERE slug = 'jbl-charge-5' ON CONFLICT DO NOTHING;
+INSERT INTO novabridge_product_attributes (product_id, name, options, position)
+SELECT id, 'Color', ARRAY['Black', 'Blue', 'Red', 'Gray'], 0 FROM novabridge_products WHERE slug = 'jbl-charge-5' ON CONFLICT DO NOTHING;
 
 -- ── Update category product counts ───────────────────────────
 
-UPDATE bridgeline_categories c
+UPDATE novabridge_categories c
 SET count = (
-  SELECT COUNT(*) FROM bridgeline_product_categories pc WHERE pc.category_id = c.id
+  SELECT COUNT(*) FROM novabridge_product_categories pc WHERE pc.category_id = c.id
 );

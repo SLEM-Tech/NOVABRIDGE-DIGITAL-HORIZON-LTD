@@ -4,49 +4,55 @@ import Link from "next/link";
 export default function NewHero() {
   return (
     <>
-<main className="flex-1 w-full max-w-7xl mx-auto pt-[200px] pb-[200px] px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<section className="w-full bg-white pt-[200px] pb-[50px] px-4 md:px-8 font-sans select-none">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        {/* Left Typography Column */}
-        <div className="flex flex-col items-start max-w-xl">
-          {/* Main Serif Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal font-serif tracking-tight text-neutral-900 leading-[1.15] mb-6">
-            Explore The Latest <br /> 
-            Empowering <br /> 
-            Trends
-          </h1>
+        {/* Left Primary Hero Card */}
+        <div className="lg:col-span-2 bg-[#5151fa] rounded-[32px] p-8 sm:p-12 md:p-16 flex flex-col justify-between items-start text-white min-h-[380px]">
+          <div className="max-w-xl">
+            {/* Main Catchy Heading */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 sm:mb-6 leading-[1.1]">
+              Dress Your Tech in Color.
+            </h2>
+            
+            {/* Descriptive Body Copy */}
+            <p className="text-sm sm:text-base font-normal opacity-90 leading-relaxed max-w-md">
+              Ultra-protective cases for the chronically vibrant. 
+              Engineered for drops, designed for double-takes.
+            </p>
+          </div>
 
-          {/* Descriptive Body Text */}
-          <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-8 max-w-md">
-            The ultimate destination for fashion forward individuals seeking to 
-            elevate their style game! our mission is to empower you with the 
-            latest and most inspiring fashion trends.
-          </p>
-
-          {/* Outline Call To Action Button */}
+          {/* Action Navigation Link */}
           <Link 
             href="/category" 
-            className="group flex items-center space-x-2 px-6 py-3 border border-neutral-400 text-xs font-medium tracking-wide text-neutral-800 rounded-none hover:border-black hover:text-black transition-colors duration-200"
+            className="mt-8 px-8 py-3.5 bg-white text-[#5151fa] font-semibold text-sm rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.1)] hover:bg-neutral-50 hover:shadow-[0_6px_16px_rgba(0,0,0,0.15)] transition-all duration-200"
           >
-            <span>Explore More</span>
-            <span className="transform group-hover:translate-x-1 transition-transform duration-200">→</span>
+            Shop Collection
           </Link>
         </div>
 
-        {/* Right Feature Graphic Column */}
-        <div className="w-full flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-lg aspect-[16/10] drop-shadow-[0_20px_35px_rgba(0,0,0,0.15)] transform -rotate-[12deg] hover:rotate-0 transition-transform duration-500 ease-out">
-            <Image
-              src="/images/bridgelinebackground.png" // Replace with your targeted local source pathway
-              alt="Zebronics RGB Gaming Keyboard"
-              fill
-              sizes="(max-w-7xl) 50vw, 100vw"
-              className="object-contain"
-              priority
-            />
+        {/* Right Eco Feature Card */}
+        <div className="bg-[#008743] rounded-[32px] p-8 sm:p-12 flex flex-col items-center justify-center text-center text-white min-h-[380px]">
+          {/* Minimal Leaf Graphic Icon */}
+          <div className="mb-6 text-white transform hover:scale-105 transition-transform duration-200">
+            <svg className="w-14 h-14 fill-current" viewBox="0 0 24 24">
+              <path d="M17.11 3.17A10.87 10.87 0 0 0 12 4.5a10.87 10.87 0 0 0-5.11-1.33A10.89 10.89 0 0 0 2 12.39a11 11 0 0 0 11 11h.61a11 11 0 0 0 11-11 10.89 10.89 0 0 0-7.5-9.22zm-4.5 18.22a8.87 8.87 0 0 1-6.61-3A10.86 10.86 0 0 0 12 15.5a10.86 10.86 0 0 0 6 2.89 8.87 8.87 0 0 1-6.39 3z"/>
+            </svg>
           </div>
+
+          {/* Eco Card Subheading */}
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight mb-3">
+            Plant-Based Protection
+          </h3>
+
+          {/* Eco Sub-paragraph Text */}
+          <p className="text-xs sm:text-sm font-normal opacity-85 leading-relaxed max-w-[240px]">
+            100% Compostable cases that don't cost the earth.
+          </p>
         </div>
 
-      </main>
+      </div>
+    </section>
     
    
    

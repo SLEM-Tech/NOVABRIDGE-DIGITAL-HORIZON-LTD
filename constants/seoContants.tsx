@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 
 // 1. Core Configuration Constants
-export const SITE_NAME = "BRIDGELINE VERTEX INNOVATIONS LTD";
+export const SITE_NAME = "NOVABRIDGE DIGITAL HORIZON LTD";
 export const SITE_URL =
-	process.env.NEXT_PUBLIC_SITE_URL || "https://bridgelinevertex.com";
-export const TWITTER_HANDLE = "@BridgelineVertex";
+	process.env.NEXT_PUBLIC_SITE_URL || "https://novabridgedigitalhorizon.com";
+export const TWITTER_HANDLE = "@NovabridgeDigital";
 
 interface SEOConfig {
 	title: string;
@@ -18,12 +18,12 @@ interface SEOConfig {
 // 2. The SEO Database
 export const SEODATA: Record<string, SEOConfig> = {
 	default: {
-		title: `${SITE_NAME} | BRIDGELINE VERTEX INNOVATIONS LTD`,
+		title: `${SITE_NAME} | NOVABRIDGE DIGITAL HORIZON LTD`,
 		description:
-			"BRIDGELINE VERTEX INNOVATIONS LTD delivers elite software engineering, AI-driven automation, and strategic digital transformation to scale global enterprises.",
+			"NOVABRIDGE DIGITAL HORIZON LTD delivers elite software engineering, AI-driven automation, and strategic digital transformation to scale global enterprises.",
 		keywords: [
-			"BRIDGELINE VERTEX INNOVATIONS LTD",
-			"Bridgeline Vertex",
+			"NOVABRIDGE DIGITAL HORIZON LTD",
+			"Novabridge Digital Horizon",
 			"Software Engineering Nigeria",
 			"Digital Transformation Ventures",
 			"AI Business Solutions",
@@ -36,7 +36,7 @@ export const SEODATA: Record<string, SEOConfig> = {
 	home: {
 		title: `${SITE_NAME} | Innovative Digital Products & Tech Excellence`,
 		description:
-			"Build the future with BRIDGELINE VERTEX INNOVATIONS LTD. From custom mobile applications to complex AI ecosystems, we engineer high-performance products tailored to your vision.",
+			"Build the future with NOVABRIDGE DIGITAL HORIZON LTD. From custom mobile applications to complex AI ecosystems, we engineer high-performance products tailored to your vision.",
 		keywords: [
 			"Mobile App Development",
 			"Cloud Native Applications",
@@ -61,7 +61,7 @@ export const SEODATA: Record<string, SEOConfig> = {
 	portfolio: {
 		title: `Portfolio | Digital Impact Projects by ${SITE_NAME}`,
 		description:
-			"See how BRIDGELINE VERTEX INNOVATIONS LTD drives growth. Browse our case studies in fintech, healthtech, and enterprise automation.",
+			"See how NOVABRIDGE DIGITAL HORIZON LTD drives growth. Browse our case studies in fintech, healthtech, and enterprise automation.",
 		keywords: [
 			"Software Portfolio",
 			"Tech Case Studies",
@@ -83,19 +83,19 @@ export const SEODATA: Record<string, SEOConfig> = {
 	login: {
 		title: `Partner Portal Login | ${SITE_NAME}`,
 		description:
-			"Access your Bridgeline Vertex client dashboard to track development sprints, manage documentation, and collaborate with your team.",
+			"Access your Novabridge Digital Horizon client dashboard to track development sprints, manage documentation, and collaborate with your team.",
 		keywords: [
 			"Client login",
-			"Bridgeline Vertex Dashboard",
+			"Novabridge Digital Horizon Dashboard",
 			"Project tracking",
 		],
 	},
 	register: {
 		title: `Onboard with Us | Join ${SITE_NAME}`,
 		description:
-			"Start your digital journey with BRIDGELINE VERTEX INNOVATIONS LTD. Register to access project resources and technical roadmaps.",
+			"Start your digital journey with NOVABRIDGE DIGITAL HORIZON LTD. Register to access project resources and technical roadmaps.",
 		keywords: [
-			"Register Bridgeline Vertex",
+			"Register Novabridge Digital Horizon",
 			"Project onboarding",
 			"Tech partnership",
 		],

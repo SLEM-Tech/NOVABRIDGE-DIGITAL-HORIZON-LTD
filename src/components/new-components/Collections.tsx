@@ -72,80 +72,57 @@ export default function NewCollection({ title = 'Selected For You', initialProdu
   };
 
   return (
-    <section className="w-full bg-white text-black py-16 px-4 md:px-8 font-sans select-none">
+    <section className="w-full bg-[#FAF9F6] py-12 px-4 md:px-8 font-sans select-none">
       {showNotification && (
         <div className="fixed top-4 right-4 z-[9999] bg-green-600 text-white px-6 py-4 rounded-lg shadow-lg">
           ✓ Item added to cart!
         </div>
       )}
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-normal font-serif text-neutral-900 text-center mb-12">
-          {title}
-        </h2>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex justify-between items-center mb-6 px-1">
+          <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 tracking-tight">
+            {title}
+          </h2>
+          <Link href="/category" className="text-xs sm:text-sm font-semibold text-[#5151fa] hover:text-[#3b3be6] transition-colors">
+            View all
+          </Link>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {isLoading && !hasServerProducts &&
-            Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="flex flex-col animate-pulse">
-                <div className="bg-[#f2f2f2] rounded-2xl aspect-[1.12/1] w-full mb-4" />
-                <div className="h-4 bg-gray-200 rounded w-3/4 mb-2" />
-                <div className="h-3 bg-gray-200 rounded w-1/2" />
+            Array.from({ length: 4 }).map((_, i) => (
+              <div key={i} className="bg-[#f0effa] rounded-[24px] p-4 animate-pulse">
+                <div className="aspect-[1.18/1] w-full rounded-[18px] bg-[#d0cff0] mb-4" />
+                <div className="h-3 bg-[#d0cff0] rounded w-3/4 mb-2" />
+                <div className="h-3 bg-[#d0cff0] rounded w-1/2" />
               </div>
             ))
           }
           {getSlideProducts().map((product: ProductType, index: number) => (
-            <div key={product.id || index} className="flex flex-col">
-              <div className="bg-[#f2f2f2] rounded-2xl aspect-[1.12/1] w-full relative overflow-hidden mb-4 flex items-center justify-center p-6">
-                <div className="relative w-full h-full transform hover:scale-105 transition-transform duration-300 ease-out">
+            <div
+              key={product.id || index}
+              className="bg-[#f0effa] rounded-[24px] p-4 flex flex-col justify-between hover:shadow-md transition-shadow duration-200 border border-neutral-100/50"
+            >
+              <div className="relative aspect-[1.18/1] w-full rounded-[18px] overflow-hidden mb-4 bg-gradient-to-b from-[#0e96b5] to-[#25a9c9] flex items-center justify-center shadow-inner">
+                <div className="relative w-[85%] h-[85%] transform hover:scale-105 transition-transform duration-300 ease-out drop-shadow-[0_12px_20px_rgba(0,0,0,0.25)]">
                   <Image
                     src={product.images?.[0]?.src || "/placeholder.png"}
                     alt={product.name}
                     fill
-                    sizes="(max-width: 1152px) 33vw, 100vw"
+                    sizes="(max-width: 1280px) 25vw, 100vw"
                     className="object-contain"
-                    priority={index < 3}
+                    priority={index < 4}
                   />
                 </div>
               </div>
 
-              <div className="flex justify-between items-start mb-1">
-                <div>
-                  <h3 className="text-sm font-semibold text-neutral-900 tracking-wide">
-                    {product.name}
-                  </h3>
-                  <p className="text-[11px] text-neutral-400 font-light mt-0.5">
-                    {product.categories?.[0]?.name || "Product"}
-                  </p>
-                </div>
-                <div className="flex items-center space-x-2 text-[10px] pt-0.5">
-                  <div className="flex items-center text-neutral-800 font-medium">
-                    <span className="text-black text-xs mr-0.5">★</span>
-                    <span>{product.average_rating ?? "4.0"}</span>
-                  </div>
-                  <span className="text-neutral-300">|</span>
-                  <span className="bg-[#e8f7ee] text-[#2ebd6e] font-semibold px-1.5 py-0.5 rounded-sm scale-90 origin-right">
-                    {product.total_sales ? `${product.total_sales} sold` : "New"}
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex justify-between items-center mt-3">
-                <div className="flex items-baseline space-x-2">
-                  <span className="text-xl font-bold text-black tracking-tight">
-                    NGN{parseFloat(product.price).toFixed(2)}
-                  </span>
-                  {product.regular_price && product.regular_price !== product.price && (
-                    <span className="text-xs text-neutral-400 line-through font-light">
-                      NGN{parseFloat(product.regular_price).toFixed(2)}
-                    </span>
-                  )}
-                </div>
-                <button
-                  onClick={() => handleAddToCart(product)}
-                  className="bg-[#0f62fe] hover:bg-[#0043ce] text-white text-xs font-semibold px-5 py-2 rounded-md transition-colors duration-200 shadow-sm"
-                >
-                  Buy Now
-                </button>
+              <div className="flex justify-between items-center px-1 pb-1">
+                <h3 className="text-xs sm:text-sm font-medium text-neutral-700 tracking-wide">
+                  {product.name}
+                </h3>
+                <span className="text-xs sm:text-sm font-bold text-[#5151fa] tracking-tight">
+                  NGN{parseFloat(product.price).toFixed(2)}
+                </span>
               </div>
             </div>
           ))}

@@ -3,6 +3,7 @@ import React from "react";
 import Picture from "../picture/Picture";
 import NewCollection from "../new-components/Collections";
 import NewHero from "../new-components/NewHero";
+import StarterBundleBanner from "../new-components/StarterBundleBanner";
 
 import OurServices from "../new-components/OurServices";
 import ContactBanner from "../new-components/ContactUs";
@@ -33,7 +34,7 @@ const AllCategorySection = ({ initialProducts = [], initialCategories = [] }: Al
 				initialCategories={initialCategories}
 			/>
 		
-			
+			<StarterBundleBanner />
 		</>
 	);
 };

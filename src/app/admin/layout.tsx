@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AdminProvider from "./_components/AdminProvider";
 
 export const metadata: Metadata = {
-  title: { template: "%s | Bridgeline Admin", default: "Bridgeline Admin" },
+  title: { template: "%s | Novabridge Admin", default: "Novabridge Admin" },
   robots: { index: false, follow: false },
 };
 

@@ -1,4 +1,4 @@
-# decaprim Technologies — Developer Playbook
+# novabridge Technologies — Developer Playbook
 
 Everything a new developer needs to know to clone this project and get it running.
 
@@ -19,8 +19,8 @@ Everything a new developer needs to know to clone this project and get it runnin
 ## 1. Clone & Install
 
 ```bash
-git clone https://github.com/SLEM-Tech/decaprim-technologies.git
-cd decaprim-technologies
+git clone https://github.com/SLEM-Tech/novabridge-technologies.git
+cd novabridge-technologies
 pnpm install
 ```
 
@@ -53,7 +53,7 @@ AWS_BUCKET_NAME=your_bucket_name
 JWT_SECRET=a_long_random_secret_string
 
 # ── Table prefix (must match what was used during DB init) ────
-TABLE_PREFIX=decaprim_
+TABLE_PREFIX=novabridge_
 
 # ── AlliancePay (payment gateway) ────────────────────────────
 NEXT_PUBLIC_CHECKOUT_API=https://checkout-api-service-dev.eks-alliancepay.com
@@ -109,19 +109,19 @@ npm run dev
 GET http://localhost:3000/api/db/migrate?secret=init-db-2024
 ```
 
-Creates all database tables with the `decaprim_` prefix. Source file: `src/lib/schema.sql`.
+Creates all database tables with the `novabridge_` prefix. Source file: `src/lib/schema.sql`.
 
 Tables created:
-- `decaprim_users`
-- `decaprim_categories`
-- `decaprim_products`
-- `decaprim_product_images`
-- `decaprim_product_categories`
-- `decaprim_product_attributes`
-- `decaprim_orders`
-- `decaprim_order_items`
-- `decaprim_banners`
-- `decaprim_global_settings`
+- `novabridge_users`
+- `novabridge_categories`
+- `novabridge_products`
+- `novabridge_product_images`
+- `novabridge_product_categories`
+- `novabridge_product_attributes`
+- `novabridge_orders`
+- `novabridge_order_items`
+- `novabridge_banners`
+- `novabridge_global_settings`
 
 Expected response:
 ```json
@@ -160,14 +160,14 @@ Expected response:
 ### Step 4 — Create the super admin account
 
 ```
-GET http://localhost:3000/api/admin/bootstrap?secret=decaprim-admin-2024
+GET http://localhost:3000/api/admin/bootstrap?secret=novabridge-admin-2024
 ```
 
 Creates the first admin user:
 
 | Field | Value |
 |-------|-------|
-| Email | `admin@decaprim.com` |
+| Email | `admin@novabridge.com` |
 | Password | `admin` |
 | Role | `admin` |
 
@@ -192,7 +192,7 @@ curl "http://localhost:3000/api/db/migrate?secret=init-db-2024"
 curl "http://localhost:3000/api/db/seed?secret=seed-db-2024"
 
 # 3. Create super admin
-curl "http://localhost:3000/api/admin/bootstrap?secret=decaprim-admin-2024"
+curl "http://localhost:3000/api/admin/bootstrap?secret=novabridge-admin-2024"
 ```
 
 Then log in at `http://localhost:3000/admin/login` with `admin@gmail.com` / `admin`.
@@ -223,7 +223,7 @@ Dev server runs at `http://localhost:3000`.
 | `http://localhost:3000/admin/dashboard` | Admin dashboard (requires login) |
 | `http://localhost:3000/api/db/migrate?secret=init-db-2024` | Run schema migration (step 1 of setup) |
 | `http://localhost:3000/api/db/seed?secret=seed-db-2024` | Seed sample products & categories (step 2) |
-| `http://localhost:3000/api/admin/bootstrap?secret=decaprim-admin-2024` | Create super admin account (step 3) |
+| `http://localhost:3000/api/admin/bootstrap?secret=novabridge-admin-2024` | Create super admin account (step 3) |
 
 ---
 

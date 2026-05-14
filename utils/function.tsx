@@ -1,5 +1,5 @@
 "use client";
-import bridgeline  from "@public/images/bridgeline.png";
+import novabridge  from "@public/images/novabridge.png";
 import Picture from "@src/components/picture/Picture";
 import Link from "next/link";
 
@@ -21,12 +21,12 @@ export const LogoImage = ({ className }: LogoImageProps) => {
 		<Link href='/' className='flex w-full items-end'>
 		
 		 <Picture
-				src={bridgeline}
+				src={novabridge}
 				alt='logo'
 				priority
 				
 				loading='lazy'
-				className={`w-[100px] lg:w-[120px] duration-300 hover:scale-105 transition-[.3] hover:animate-pulse ${className}`}
+				className={`w-[150px] lg:w-[180px] duration-300 hover:scale-105 transition-[.3] hover:animate-pulse ${className}`}
 			/>
 			{/* <h4 className={`text-base text-white sm:text-lg font-medium ${pacifico.className}`}>
 				Apexlogic

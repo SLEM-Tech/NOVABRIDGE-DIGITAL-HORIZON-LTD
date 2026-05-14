@@ -1,13 +1,13 @@
 /**
  * Centralised table-name registry.
  *
- * The prefix is read from the TABLE_PREFIX environment variable (default: "bridgeline_").
+ * The prefix is read from the TABLE_PREFIX environment variable (default: "novabridge_").
  * Set TABLE_PREFIX in your .env file to change it for every table at once.
  *
  * Example .env entry:
- *   TABLE_PREFIX=bridgeline_
+ *   TABLE_PREFIX=novabridge_
  */
-const prefix = process.env.TABLE_PREFIX ?? "bridgeline_";
+const prefix = process.env.TABLE_PREFIX ?? "novabridge_";
 
 export const T = {
 	users:              `${prefix}users`,
