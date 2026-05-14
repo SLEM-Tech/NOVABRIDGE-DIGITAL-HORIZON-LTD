@@ -43,7 +43,7 @@ export default function AdminLoginPage() {
           <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl">🔐</span>
           </div>
-          <h1 className="text-2xl font-bold text-white tracking-tight">Apexlogic Admin</h1>
+          <h1 className="text-2xl font-bold text-white tracking-tight">Bridgeline Admin</h1>
           <p className="text-white/50 text-sm mt-1 font-medium">Sign in to your admin account</p>
         </div>
 

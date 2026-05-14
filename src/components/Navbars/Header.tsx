@@ -104,7 +104,7 @@ const Header = () => {
 
 	return (
 		<>
-			<header className='flex flex-col w-full bg-black z-[100] fixed top-0 border-b border-white/5 shadow-2xl transition-all'>
+			<header className='flex flex-col w-full bg-white z-[100] fixed top-0 border-b border-white/5 shadow-2xl transition-all'>
 				{/* Desktop Header */}
 				<div className='hidden slg:grid grid-cols-10 items-center justify-between w-full py-3 max-w-[1440px] px-8 mx-auto'>
 					{/* 1. Logo */}

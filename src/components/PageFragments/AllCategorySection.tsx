@@ -6,6 +6,7 @@ import NewHero from "../new-components/NewHero";
 
 import OurServices from "../new-components/OurServices";
 import ContactBanner from "../new-components/ContactUs";
+import WhyChooseUs from "../new-components/WhyChooseUs";
 
 interface AllCategorySectionProps {
 	initialProducts?: ProductType[];
@@ -16,22 +17,23 @@ const AllCategorySection = ({ initialProducts = [], initialCategories = [] }: Al
 	return (
 		<>
 			<div className='relative w-full min-h-[500px] md:h-screen overflow-hidden'>
-				<Picture
+				{/* <Picture
 					src='/images/apexlogicbackground.png'
 					alt='Gaming Setup'
 					className='absolute inset-0 w-full h-full object-cover'
-				/>
-				<div className='absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent' />
+				/> */}
+			
+
 				<NewHero />
 			</div>
-			<OurServices />
+			<WhyChooseUs />
 			<NewCollection
 				title='Selected For You'
 				initialProducts={initialProducts}
 				initialCategories={initialCategories}
 			/>
 		
-			<ContactBanner />
+			
 		</>
 	);
 };

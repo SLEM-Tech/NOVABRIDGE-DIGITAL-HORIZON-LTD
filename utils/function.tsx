@@ -1,5 +1,5 @@
 "use client";
-import apexlogic  from "@public/images/apexlogic.png";
+import bridgeline  from "@public/images/bridgeline.png";
 import Picture from "@src/components/picture/Picture";
 import Link from "next/link";
 
@@ -21,7 +21,7 @@ export const LogoImage = ({ className }: LogoImageProps) => {
 		<Link href='/' className='flex w-full items-end'>
 		
 		 <Picture
-				src={apexlogic}
+				src={bridgeline}
 				alt='logo'
 				priority
 				

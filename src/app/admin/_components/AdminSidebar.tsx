@@ -21,7 +21,7 @@ export default function AdminSidebar({ onClose }: { onClose?: () => void }) {
   return (
     <aside className="flex flex-col h-full bg-[#002D5B] text-white w-64 shadow-2xl">
       <div className="px-6 py-6 border-b border-white/10">
-        <h1 className="text-lg font-bold tracking-tight text-white">Apexlogic Admin</h1>
+        <h1 className="text-lg font-bold tracking-tight text-white">Bridgeline Admin</h1>
         <p className="text-xs text-white/40 mt-0.5 font-medium uppercase tracking-widest">Management Panel</p>
       </div>
 
@@ -48,7 +48,7 @@ export default function AdminSidebar({ onClose }: { onClose?: () => void }) {
       </nav>
 
       <div className="px-6 py-4 border-t border-white/10">
-        <p className="text-[10px] text-white/30 font-medium uppercase tracking-widest">Apexlogic Intercontinental Technologies Limited</p>
+        <p className="text-[10px] text-white/30 font-medium uppercase tracking-widest">BRIDGELINE VERTEX INNOVATIONS LTD</p>
       </div>
     </aside>
   );

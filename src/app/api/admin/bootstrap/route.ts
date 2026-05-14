@@ -5,14 +5,14 @@ import { T } from "@src/lib/tables";
 
 const ADMIN_EMAIL = "admin@gmail.com";
 
-// GET /api/admin/bootstrap?secret=decaprim-admin-2024
+// GET /api/admin/bootstrap?secret=bridgeline-admin-2024
 // Safe to run multiple times.
-// - If admin@gmail.com exists → updates email to admin@decaprim.com
-// - If admin@decaprim.com exists → no-op
-// - If neither exists → creates new super admin with admin@decaprim.com
+// - If admin@gmail.com exists → updates email to admin@bridgelinevertex.com
+// - If admin@bridgelinevertex.com exists → no-op
+// - If neither exists → creates new super admin with admin@bridgelinevertex.com
 export async function GET(req: NextRequest) {
   const secret = req.nextUrl.searchParams.get("secret");
-  if (secret !== "apexlogic-admin-2024") {
+  if (secret !== "bridgeline-admin-2024") {
     return NextResponse.json({ message: "Forbidden" }, { status: 403 });
   }
 
