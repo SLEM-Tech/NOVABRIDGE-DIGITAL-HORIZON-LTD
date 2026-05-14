@@ -13,7 +13,7 @@ const config: Config = {
 			fontFamily: {
 				poppins: ["var(--font-poppins)", "sans-serif"],
 			},
-	colors: {
+			colors: {
     transparent: "transparent",
     current: "currentColor",
 
