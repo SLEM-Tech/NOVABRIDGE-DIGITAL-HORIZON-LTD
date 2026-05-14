@@ -54,7 +54,7 @@ export const splitText = (text: string) => {
 	return text.split(/(?=[A-Z])/).join(" ");
 };
 
-export const CompanyName = "Decaprim Tech Ventures Limited";
+export const CompanyName = "Apexlogic Intercontinental Technologies Limited";
 
 export const statusStyles: { [key: string]: string } = {
 	completed: "text-emerald-500",

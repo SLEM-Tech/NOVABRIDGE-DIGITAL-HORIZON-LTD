@@ -172,7 +172,7 @@ const ProductTable = ({ onClose }: ProductTableProps) => {
 						</div>
 
 						<div className='pt-4 flex justify-between items-end'>
-							<span className='text-xs font-black uppercase tracking-widest text-gray-400'>
+							<span className='text-xs font-black uppercase tracking-widest text-gray-600'>
 								Total Amount
 							</span>
 							<div className='text-3xl font-black text-gray-900 tracking-tighter'>
@@ -184,7 +184,7 @@ const ProductTable = ({ onClose }: ProductTableProps) => {
 					<div className='flex flex-col gap-3'>
 						<button
 							onClick={handleCheckoutOpen}
-							className='w-full py-4 bg-gray-900 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-black transition-all shadow-xl active:scale-95'
+							className='w-full py-4 bg-[#D92D20] text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#b82419] transition-all shadow-xl active:scale-95'
 						>
 							Proceed to Checkout
 						</button>

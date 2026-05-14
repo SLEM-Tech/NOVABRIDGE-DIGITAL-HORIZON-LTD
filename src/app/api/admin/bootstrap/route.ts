@@ -3,7 +3,7 @@ import { queryOne } from "@src/lib/db";
 import { hashPassword } from "@src/lib/auth";
 import { T } from "@src/lib/tables";
 
-const ADMIN_EMAIL = "admin@decaprim.com";
+const ADMIN_EMAIL = "admin@gmail.com";
 
 // GET /api/admin/bootstrap?secret=decaprim-admin-2024
 // Safe to run multiple times.
@@ -12,7 +12,7 @@ const ADMIN_EMAIL = "admin@decaprim.com";
 // - If neither exists → creates new super admin with admin@decaprim.com
 export async function GET(req: NextRequest) {
   const secret = req.nextUrl.searchParams.get("secret");
-  if (secret !== "decaprim-admin-2024") {
+  if (secret !== "apexlogic-admin-2024") {
     return NextResponse.json({ message: "Forbidden" }, { status: 403 });
   }
 
@@ -24,27 +24,33 @@ export async function GET(req: NextRequest) {
     );
 
     if (existing) {
+      const hash = await hashPassword("admin");
+      await queryOne<any>(
+        `UPDATE ${T.users} SET password_hash = $1, updated_at = NOW() WHERE id = $2`,
+        [hash, existing.id],
+      );
       return NextResponse.json({
-        message: "Super admin already exists",
+        message: "Super admin password reset",
         admin: { id: existing.id, email: existing.email },
       });
     }
 
-    // Check if old gmail admin exists → migrate email
+    // Check if old admin exists → migrate email
     const oldAdmin = await queryOne<any>(
-      `SELECT id FROM ${T.users} WHERE email = $1 OR username = $2`,
-      ["admin@gmail.com", "superadmin"],
+      `SELECT id FROM ${T.users} WHERE username = $1`,
+      ["superadmin"],
     );
 
     if (oldAdmin) {
+      const hash = await hashPassword("admin");
       const updated = await queryOne<any>(
-        `UPDATE ${T.users} SET email = $1, updated_at = NOW()
-         WHERE id = $2
+        `UPDATE ${T.users} SET email = $1, password_hash = $2, updated_at = NOW()
+         WHERE id = $3
          RETURNING id, username, email, role`,
-        [ADMIN_EMAIL, oldAdmin.id],
+        [ADMIN_EMAIL, hash, oldAdmin.id],
       );
       return NextResponse.json({
-        message: "Super admin email updated",
+        message: "Super admin updated",
         admin: updated,
       });
     }

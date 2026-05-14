@@ -21,7 +21,7 @@ const ContactCards = () => {
 			type: "email",
 			icon: <RxEnvelopeClosed className='text-primary text-2xl xl:text-4xl' />,
 			// additionalText: GeneralSettings ? GeneralSettings[0]?.value : "N/A",
-			additionalText: "info@decaprimtech.com"
+			additionalText: "info@apexlogic.com"
 		},
 		{
 			id: 2,

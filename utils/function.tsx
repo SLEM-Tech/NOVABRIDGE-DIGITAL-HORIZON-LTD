@@ -1,5 +1,5 @@
 "use client";
-import logoImage  from "@public/images/deca-logo.png";
+import apexlogic  from "@public/images/apexlogic.png";
 import Picture from "@src/components/picture/Picture";
 import Link from "next/link";
 
@@ -8,6 +8,7 @@ interface LogoImageProps {
 }
 
 import { Nunito, Pacifico } from "next/font/google";
+import Image from "@node_modules/next/image";
 
 const pacifico = Pacifico({
 	subsets: ["latin-ext"],
@@ -17,17 +18,19 @@ const pacifico = Pacifico({
 
 export const LogoImage = ({ className }: LogoImageProps) => {
 	return (
-		<Link href='/' className='flex items-end'>
+		<Link href='/' className='flex w-full items-end'>
+		
 		 <Picture
-				src={logoImage}
+				src={apexlogic}
 				alt='logo'
 				priority
+				
 				loading='lazy'
-				className={`w-[10px] lg:w-[15px] duration-300 hover:scale-105 transition-[.3] hover:animate-pulse ${className}`}
+				className={`w-[100px] lg:w-[120px] duration-300 hover:scale-105 transition-[.3] hover:animate-pulse ${className}`}
 			/>
-			<h4 className={`text-base text-white sm:text-lg font-medium ${pacifico.className}`}>
-				Decaprim
-			</h4> 
+			{/* <h4 className={`text-base text-white sm:text-lg font-medium ${pacifico.className}`}>
+				Apexlogic
+			</h4>  */}
 		</Link>
 	);
 };

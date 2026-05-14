@@ -24,7 +24,7 @@ const config: Config = {
 					light: "#1F2335", // Dark card/surface background
 				},
 
-				background: "#08090C", // Void black
+				background: "#545760", // Void black
 				surface: "#12131A", // Dark panel surface
 				panel: "#161925", // Soft neon slate
 				dark: "#FFFFFF", // High-contrast text
@@ -100,6 +100,14 @@ const config: Config = {
 							foreground: "#08090C",
 						},
 						focus: "#E000FF",
+						content1: "#1F2335",
+						content2: "#1F2335",
+						content3: "#2B2F40",
+						content4: "#2B2F40",
+						default: {
+							DEFAULT: "#1F2335",
+							foreground: "#FFFFFF",
+						},
 					},
 				},
 			},

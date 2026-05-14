@@ -1,24 +1,35 @@
-import Link from "@node_modules/next/link";
+import Link from "next/link";
 
 export default function NewHero() {
   return (
-    <div className="absolute inset-0 flex flex-col justify-center items-center gap-8 md:gap-12 px-4 md:px-8 lg:px-16 py-12 md:py-20 z-10">
-      <div className="flex flex-col items-center gap-6 md:gap-8 max-w-5xl">
-        <h1 className="text-white font-gilroyBold text-3xl md:text-5xl lg:text-7xl xl:text-[80px] leading-tight md:leading-[1.1] text-center tracking-[-0.06em]">
-          Your Top Technology Service Provider
-        </h1>
-        <p className="text-white font-gilroyRegular text-lg md:text-xl lg:text-2xl leading-relaxed text-center tracking-[-0.02em] max-w-2xl">
-          Your top technology service provider
+    <>
+    <main className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
+        
+        {/* Small Tagline Sub-header */}
+        <p className="text-[10px] sm:text-xs font-bold tracking-[0.4em] text-neutral-500 uppercase mb-4">
+          Objects of Desire
         </p>
-        <Link href='/category'>
-                 <button className="cursor-pointer flex py-3.5 px-8 md:px-10 justify-center items-center gap-2 rounded-[5px] bg-[#D92D20] hover:bg-[#b82419] transition-colors mt-4 z-20">
-          <span className="text-white font-gilroyRegular text-base md:text-lg leading-[1.4em] tracking-[0.0002em]">
-            Shop Now
-          </span>
-        </button>
+
+        {/* Large Main Heading */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-neutral-200 leading-[1.15] mb-6 max-w-3xl">
+          You Will Love This <br /> Awesome Handcraft
+        </h1>
+
+        {/* Placeholder Descriptive Body Text */}
+        <p className="text-xs sm:text-sm text-neutral-400 max-w-2xl leading-relaxed mb-10 font-light">
+          Source premium electronics, appliances, and more directly from China — delivered to your door across Nigeria with trusted quality and flexible payment plans.
+        </p>
+
+<Link href='/category' className="px-10 py-3 text-xs font-semibold text-black bg-neutral-100 rounded-md hover:bg-white transition-all duration-200 shadow-md tracking-wider"
+        >
+      
+          
+          Explore
         </Link>
+      </main>
+    
    
-      </div>
-    </div>
+   
+     </>
   );
 }

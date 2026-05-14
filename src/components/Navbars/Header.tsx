@@ -108,7 +108,7 @@ const Header = () => {
 				{/* Desktop Header */}
 				<div className='hidden slg:grid grid-cols-10 items-center justify-between w-full py-3 max-w-[1440px] px-8 mx-auto'>
 					{/* 1. Logo */}
-					<div className='col-span-2 w-[30px]'>
+					<div className='col-span-2 w-[130px]'>
 						<LogoImage />
 					</div>
 					{/* 2. Search Bar */}

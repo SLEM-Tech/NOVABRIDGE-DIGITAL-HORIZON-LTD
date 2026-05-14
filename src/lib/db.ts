@@ -2,7 +2,9 @@ import { Pool } from "pg";
 
 const connectionString = process.env.DATABASE_URL;
 
-const pool = new Pool(
+declare global { var _pgPool: Pool | undefined; }
+
+const pool = globalThis._pgPool ?? new Pool(
 	connectionString
 		? { connectionString, ssl: { rejectUnauthorized: false } }
 		: {
@@ -11,12 +13,14 @@ const pool = new Pool(
 				user: process.env.DB_USER || "postgres",
 				password: process.env.DB_PASSWORD || "Retail@1234",
 				port: Number(process.env.DB_PORT) || 5432,
-				// Only use SSL when explicitly requested (e.g. on cloud-hosted DBs)
+				connectionTimeoutMillis: 5000,
 				...(process.env.DB_SSL === "true"
 					? { ssl: { rejectUnauthorized: false } }
 					: {}),
 			},
 );
+
+if (process.env.NODE_ENV !== "production") globalThis._pgPool = pool;
 
 export async function query<T = any>(
 	text: string,

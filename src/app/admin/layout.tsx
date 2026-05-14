@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AdminProvider from "./_components/AdminProvider";
 
 export const metadata: Metadata = {
-  title: { template: "%s | Decaprim Admin", default: "Decaprim Admin" },
+  title: { template: "%s | Apexlogic Admin", default: "Apexlogic Admin" },
   robots: { index: false, follow: false },
 };
 

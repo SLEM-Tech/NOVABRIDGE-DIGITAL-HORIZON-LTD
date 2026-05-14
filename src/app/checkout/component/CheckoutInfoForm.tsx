@@ -583,7 +583,7 @@ const CheckoutInfoForm = () => {
 										name='orderNotes'
 										rows={3}
 										placeholder='Notes about your delivery...'
-										className='w-full bg-gray-50 border-none rounded-2xl p-4 text-sm focus:ring-2 focus:ring-primaryColor-100/20 transition-all outline-none resize-none'
+										className='w-full bg-[#F9FAFB] border-none rounded-2xl p-4 text-sm text-gray-800 focus:ring-2 focus:ring-primaryColor-100/20 transition-all outline-none resize-none'
 									/>
 								</div>
 							</div>

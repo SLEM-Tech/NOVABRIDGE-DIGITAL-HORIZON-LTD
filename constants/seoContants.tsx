@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 
 // 1. Core Configuration Constants
-export const SITE_NAME = "Decaprim Tech";
+export const SITE_NAME = "Apexlogic Intercontinental Technologies Limited";
 export const SITE_URL =
-	process.env.NEXT_PUBLIC_SITE_URL || "https://decaprim.com"; // Update with actual URL
-export const TWITTER_HANDLE = "@DecaprimTech";
+	process.env.NEXT_PUBLIC_SITE_URL || "https://apexlogic.com";
+export const TWITTER_HANDLE = "@ApexlogicTech";
 
 interface SEOConfig {
 	title: string;
@@ -18,12 +18,12 @@ interface SEOConfig {
 // 2. The SEO Database
 export const SEODATA: Record<string, SEOConfig> = {
 	default: {
-		title: `${SITE_NAME} | Decaprim Tech Ventures Limited`,
+		title: `${SITE_NAME} | Apexlogic Intercontinental Technologies Limited`,
 		description:
-			"Decaprim Tech Ventures Limited delivers elite software engineering, AI-driven automation, and strategic digital transformation to scale global enterprises.",
+			"Apexlogic Intercontinental Technologies Limited delivers elite software engineering, AI-driven automation, and strategic digital transformation to scale global enterprises.",
 		keywords: [
-			"Decaprim Tech Ventures Limited",
-			"Decaprim Tech",
+			"Apexlogic Intercontinental Technologies Limited",
+			"Apexlogic Tech",
 			"Software Engineering Nigeria",
 			"Digital Transformation Ventures",
 			"AI Business Solutions",
@@ -36,7 +36,7 @@ export const SEODATA: Record<string, SEOConfig> = {
 	home: {
 		title: `${SITE_NAME} | Innovative Digital Products & Tech Excellence`,
 		description:
-			"Build the future with Decaprim Tech. From custom mobile applications to complex AI ecosystems, we engineer high-performance products tailored to your vision.",
+			"Build the future with Apexlogic Intercontinental Technologies Limited. From custom mobile applications to complex AI ecosystems, we engineer high-performance products tailored to your vision.",
 		keywords: [
 			"Mobile App Development",
 			"Cloud Native Applications",
@@ -61,7 +61,7 @@ export const SEODATA: Record<string, SEOConfig> = {
 	portfolio: {
 		title: `Portfolio | Digital Impact Projects by ${SITE_NAME}`,
 		description:
-			"See how Decaprim Tech Ventures Limited drives growth. Browse our case studies in fintech, healthtech, and enterprise automation.",
+			"See how Apexlogic Intercontinental Technologies Limited drives growth. Browse our case studies in fintech, healthtech, and enterprise automation.",
 		keywords: [
 			"Software Portfolio",
 			"Tech Case Studies",
@@ -83,19 +83,19 @@ export const SEODATA: Record<string, SEOConfig> = {
 	login: {
 		title: `Partner Portal Login | ${SITE_NAME}`,
 		description:
-			"Access your Decaprim client dashboard to track development sprints, manage documentation, and collaborate with your team.",
+			"Access your Apexlogic client dashboard to track development sprints, manage documentation, and collaborate with your team.",
 		keywords: [
 			"Client login",
-			"Decaprim Dashboard",
+			"Apexlogic Dashboard",
 			"Project tracking",
 		],
 	},
 	register: {
 		title: `Onboard with Us | Join ${SITE_NAME}`,
 		description:
-			"Start your digital journey with Decaprim Tech Ventures. Register to access project resources and technical roadmaps.",
+			"Start your digital journey with Apexlogic Intercontinental Technologies Limited. Register to access project resources and technical roadmaps.",
 		keywords: [
-			"Register Decaprim",
+			"Register Apexlogic",
 			"Project onboarding",
 			"Tech partnership",
 		],
