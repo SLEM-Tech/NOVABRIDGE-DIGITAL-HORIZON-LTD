@@ -14,57 +14,61 @@ const config: Config = {
 				poppins: ["var(--font-poppins)", "sans-serif"],
 			},
 			colors: {
-				transparent: "transparent",
-				current: "currentColor",
+    transparent: "transparent",
+    current: "currentColor",
 
-				/* ========== Cyberpunk Foundation ========== */
-				brand: {
-					navy: "#0D0E15", // Deep cyber space background
-					blue: "#00F0FF", // Electric cyan
-					light: "#1F2335", // Dark card/surface background
-				},
+    /* ========== Cyberpunk Foundation ========== */
+    brand: {
+        navy: "#0D0E15", // Deep cyber space background
+        blue: "#00F0FF", // Electric cyan
+        light: "#1F2335", // Dark card/surface background
+    },
 
-				background: "#545760", // Void black
-				surface: "#12131A", // Dark panel surface
-				panel: "#161925", // Soft neon slate
-				dark: "#FFFFFF", // High-contrast text
+    background: "#545760", 
+    surface: "#12131A", // Dark panel surface
+    panel: "#161925",   // Soft neon slate
+    
+    // CHANGED: Fixed names to avoid automatic text inversion bugs
+    textDark: "#FFFFFF", // Clear tracking label name for your white text
+    textLight: "#12131A", // Inverse text color anchor
 
-				primary: {
-					100: "#E000FF", // Neon Pink
-					200: "#9D00FF",
-					300: "#00F0FF", // Electric Cyan
-					400: "#00B8FF",
-					DEFAULT: "#00F0FF",
-				},
+    primary: {
+        100: "#E000FF", // Neon Pink
+        200: "#9D00FF",
+        300: "#00F0FF", // Electric Cyan
+        400: "#00B8FF",
+        DEFAULT: "#00F0FF",
+    },
 
-				gray: {
-					50: "#1A1C23",
-					100: "#222531",
-					200: "#2B2F40",
-					300: "#414659",
-					400: "#6B728E",
-					500: "#8F95B2",
-					600: "#B2B7D1",
-					700: "#D3D7E8",
-					800: "#EAEBFA",
-					900: "#FFFFFF",
-				},
+    // CHANGED: Flipped scale order to keep 50 as Lightest and 900 as Darkest
+    gray: {
+        50: "#FFFFFF",
+        100: "#EAEBFA",
+        200: "#D3D7E8",
+        300: "#B2B7D1",
+        400: "#8F95B2",
+        500: "#6B728E",
+        600: "#414659",
+        700: "#2B2F40",
+        800: "#222531",
+        900: "#1A1C23",
+    },
 
-				success: {
-					light: "#00FF66",
-					DEFAULT: "#39FF14",
-					dark: "#00CC44",
-				},
-				danger: {
-					light: "#fd6d91",
-					DEFAULT: "#FF0055",
-					dark: "#990033",
-				},
+    success: {
+        light: "#00FF66",
+        DEFAULT: "#39FF14",
+        dark: "#00CC44",
+    },
+    danger: {
+        light: "#fd6d91",
+        DEFAULT: "#FF0055",
+        dark: "#990033",
+    },
 
-				accent: "#E000FF", // Neon Pink Accent
-				price: "#00F0FF", // Electric Cyan Accent
-				whatsapp: "#25D366",
-			},
+    accent: "#E000FF", // Neon Pink Accent
+    price: "#00F0FF",  // Electric Cyan Accent
+    whatsapp: "#25D366",
+},
 
 			animation: {
 				"spin-slow": "spin 8s linear infinite",
